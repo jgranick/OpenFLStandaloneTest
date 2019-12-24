@@ -1,0 +1,4 @@
+-main Main
+-js src/app.js
+-cp src
+-lib openfl
