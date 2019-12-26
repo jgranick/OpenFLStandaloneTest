@@ -1,3 +1,4 @@
+import openfl.display.LoaderInfo;
 import openfl.display.Bitmap;
 import openfl.display.Loader;
 import openfl.display.Sprite;
@@ -29,7 +30,8 @@ class Main extends Sprite {
 	
 	private function loader_onComplete (event:Event):Void {
 		
-		var bitmap = cast (event.target.loader.content, Bitmap);
+		var loaderInfo:LoaderInfo = cast event.target;
+		var bitmap:Bitmap = cast loaderInfo.loader.content;
 		bitmap.x = (stage.stageWidth - bitmap.width) / 2;
 		bitmap.y = (stage.stageHeight - bitmap.height) / 2;
 		addChild (bitmap);
